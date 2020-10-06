@@ -4,31 +4,24 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.sql.Time;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.Locale;
 
-import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity {
 
-    final static public int MILLIS_PER_HOUR = 3600000;
-    final static public int MILLIS_PER_HOUR_AND_HALF = 5400000;
-    //final static public int MILLIS_PER_HOUR = 3000;
-    //final static public int MILLIS_PER_HOUR_AND_HALF = 5000;
+    final static public int MILLIS_PER_HOUR = 3600000; // One hour in milliseconds
+    final static public int MILLIS_PER_HOUR_AND_HALF = 5400000; // One hour and 30 minutes in milliseconds
 
+    // Times used for testing the app is a short amount of time
+    //final static public int MILLIS_PER_HOUR = 3000; // 3 seconds
+    //final static public int MILLIS_PER_HOUR_AND_HALF = 5000; // 5 seconds
 
     private static int previousGlassesConsumed;
     private static int buttonClicks;
@@ -46,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
     // When app is opened
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
         // Checks if it is a new day - resets data, checks if user can press button
         timeManager.timeCheck();

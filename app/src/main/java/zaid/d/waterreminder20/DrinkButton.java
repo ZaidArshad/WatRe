@@ -25,11 +25,11 @@ public class DrinkButton extends AppCompatActivity {
 
     // CONSTRUCTOR //
     DrinkButton(Context c, Button layoutButton, TextView glassesT, Background bg) {
-        context = c;
-        dataManager = new DataManager(c);
-        button = layoutButton;
-        glassesText = glassesT;
-        background = bg;
+        context = c; // Context of the main activity
+        dataManager = new DataManager(c); // Gives the class access to app's shared preferences
+        button = layoutButton; // Get access to the button from the layout
+        glassesText = glassesT; // Gets access the the text from the layout
+        background = bg; // Gets access to the background for the layout
     }
 
     // METHODS //
@@ -76,12 +76,10 @@ public class DrinkButton extends AppCompatActivity {
 
     // Returns if the button is able to be clicked and enables it if it is
     public boolean isButtonClickable() {
-
         // Gets the amounts of glasses consumed by the user today
         int glassesConsumed = dataManager.getPreviousGlassesConsumed();
         // Gets the amount times the user can click the button
         int clickEnabled = dataManager.getButtonClicks();
-        // Gets the next time the user can drink water
 
         // Enables/Disables button depending on result and returns
         boolean result = (glassesConsumed < 8 && clickEnabled > 0);

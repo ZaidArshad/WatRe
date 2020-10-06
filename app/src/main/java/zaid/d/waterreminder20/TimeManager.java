@@ -8,15 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.widget.Toast;
-
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-
-import static android.widget.Toast.LENGTH_SHORT;
 
 
 public class TimeManager extends AppCompatActivity {
@@ -28,8 +21,8 @@ public class TimeManager extends AppCompatActivity {
 
     // CONSTRUCTOR //
     public TimeManager(Context c) {
-        context = c;
-        dataManager = new DataManager(context);
+        context = c; // Gets the context of the main activity
+        dataManager = new DataManager(context); // Gives the class access to app's shared preferences
     }
 
     // METHODS //
