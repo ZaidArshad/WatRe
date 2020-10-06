@@ -23,7 +23,7 @@ public class DrinkButton extends AppCompatActivity {
     private Context context;
 
 
-    // CONSTRUCTOR // 
+    // CONSTRUCTOR //
     DrinkButton(Context c, Button layoutButton, TextView glassesT, Background bg) {
         context = c; // Context of the main activity
         dataManager = new DataManager(c); // Gives the class access to app's shared preferences
