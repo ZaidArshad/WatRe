@@ -43,7 +43,6 @@ public class TimeManager extends AppCompatActivity {
             dataManager.saveButtonClicks(1);
             dataManager.savePreviousGlassesConsumed(0);
             startDailyAlarm(dataManager.getNextDayTime());
-            startHourlyAlarm(dataManager.getNextDrinkTime());
         }
     }
 

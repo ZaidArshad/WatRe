@@ -19,15 +19,22 @@ public class MainActivity extends AppCompatActivity {
     final static public int MILLIS_PER_HOUR = 3600000; // One hour in milliseconds
     final static public int MILLIS_PER_HOUR_AND_HALF = 5400000; // One hour and 30 minutes in milliseconds
 
+    public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm:ss a", Locale.CANADA);
+
     // Times used for testing the app is a short amount of time
     //final static public int MILLIS_PER_HOUR = 3000; // 3 seconds
     //final static public int MILLIS_PER_HOUR_AND_HALF = 5000; // 5 seconds
 
     private static int previousGlassesConsumed;
+
+    /* DEBUG
     private static int buttonClicks;
     private static long firstTimeOpened;
     private static long nextDayTime;
     private static long nextDrinkTime;
+
+     */
+
 
     private TimeManager timeManager = new TimeManager(this);
     private DataManager dataManager = new DataManager(this);
@@ -52,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
         // Checks if the button is clicked
         drinkButton.buttonClicked();
 
-        // DEBUG
         TextView debug = findViewById(R.id.test);
+        debug.setText("");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm:ss a", Locale.CANADA);
-
+        /* DEBUG
+        TextView debug = findViewById(R.id.test);
         String glassesConsumed = "Glasses Consumed: " + previousGlassesConsumed + "\n";
         String buttonClicksLeft = "Button clicks left: " + buttonClicks + "\n";
         String firstTime = "First time opened: " + simpleDateFormat.format(firstTimeOpened) + "\n";
@@ -64,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String nextTime = "Next drink time" + simpleDateFormat.format(nextDrinkTime) + "\n";
         String debugString = glassesConsumed + buttonClicksLeft + firstTime + nextDay + nextTime;
         debug.setText(debugString);
+         */
     }
 
 
@@ -82,10 +90,12 @@ public class MainActivity extends AppCompatActivity {
         // Setting the layout objects
         TextView glassesText = findViewById(R.id.glassesText);
         glassesText.setText(String.valueOf(previousGlassesConsumed));
+        TextView nextDrinkText = findViewById(R.id.nextDrinkTimeText);
+        nextDrinkText.setText(simpleDateFormat.format(dataManager.getNextDrinkTime()));
 
         // Builds the main button
         Button addButton = findViewById(R.id.addButton);
-        drinkButton = new DrinkButton(this, addButton, glassesText, background);
+        drinkButton = new DrinkButton(this, addButton, glassesText, nextDrinkText, background);
 
         // Setting up the background to match the amount of water the user has consumed
         background.setProgressBar();
@@ -97,10 +107,13 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void loadData() {
         previousGlassesConsumed = dataManager.getPreviousGlassesConsumed();
+
+        /* DEBUG
         buttonClicks = dataManager.getButtonClicks();
         firstTimeOpened = dataManager.getFirstOpenedTime();
         nextDayTime = dataManager.getNextDayTime();
         nextDrinkTime = dataManager.getNextDrinkTime();
+         */
     }
 
 

@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -21,14 +24,16 @@ public class DrinkButton extends AppCompatActivity {
     private TextView glassesText;
     private Background background;
     private Context context;
+    private TextView nextDrinkText;
 
 
     // CONSTRUCTOR //
-    DrinkButton(Context c, Button layoutButton, TextView glassesT, Background bg) {
+    DrinkButton(Context c, Button layoutButton, TextView glassesT, TextView nextDrinkT, Background bg) {
         context = c; // Context of the main activity
         dataManager = new DataManager(c); // Gives the class access to app's shared preferences
         button = layoutButton; // Get access to the button from the layout
         glassesText = glassesT; // Gets access the the text from the layout
+        nextDrinkText = nextDrinkT;
         background = bg; // Gets access to the background for the layout
     }
 
@@ -49,9 +54,12 @@ public class DrinkButton extends AppCompatActivity {
                     // Decreases the amounts of times the use can click the button
                     dataManager.saveButtonClicks(dataManager.getButtonClicks()-1);
 
-                    //Schedule
+                    // Schedule
                     TimeManager timeManager = new TimeManager(context);
                     timeManager.scheduleNextDrink();
+
+                    // Update the next drink time text
+                    nextDrinkText.setText(MainActivity.simpleDateFormat.format(dataManager.getNextDrinkTime()));
 
                     // Sets the text on the screen to the amount of glasses the user has drank
                     String glassesDrank = String.valueOf(dataManager.getPreviousGlassesConsumed());

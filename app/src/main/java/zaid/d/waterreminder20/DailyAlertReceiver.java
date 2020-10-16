@@ -5,10 +5,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
-public class DailyAlertReceiver extends BroadcastReceiver {
+public class DailyAlertReceiver extends BroadcastReceiver{
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -23,6 +27,10 @@ public class DailyAlertReceiver extends BroadcastReceiver {
         // Updates the amount of times the user can click the button
         DataManager dataManager = new DataManager(context);
         dataManager.saveButtonClicks(dataManager.getButtonClicks()+1);
+
+        // Cancels any alarms that overlap to the next day
+        TimeManager timeManager = new TimeManager(context);
+        timeManager.cancelHourlyAlarm();
 
     }
 }

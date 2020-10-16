@@ -3,4 +3,6 @@
     <string name="glasses_drank">Glasses Drank</string>
     <string name="glasses">glasses</string>
     <string name="test">Test</string>
+    <string name="next_drink">Next Drink</string>
+    <string name="time">time</string>
 </resources>
