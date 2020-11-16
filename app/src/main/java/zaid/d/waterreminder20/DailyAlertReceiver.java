@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 public class DailyAlertReceiver extends BroadcastReceiver{
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -32,5 +33,10 @@ public class DailyAlertReceiver extends BroadcastReceiver{
         TimeManager timeManager = new TimeManager(context);
         timeManager.cancelHourlyAlarm();
 
+
+        Intent i = new Intent();
+        i.setClassName("zaid.d.waterreminder20", "zaid.d.waterreminder20.MainActivity");
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
     }
 }

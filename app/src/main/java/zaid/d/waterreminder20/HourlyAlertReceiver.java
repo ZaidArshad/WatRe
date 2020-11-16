@@ -19,6 +19,5 @@ public class HourlyAlertReceiver extends BroadcastReceiver  {
         notificationHelper.getManager().notify(1, nb.build());
         DataManager dataManager = new DataManager(context);
         dataManager.saveButtonClicks(dataManager.getButtonClicks()+1);
-
     }
 }
