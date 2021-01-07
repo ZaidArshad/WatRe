@@ -1,6 +1,8 @@
 package zaid.d.waterreminder20;
 
 
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -20,7 +22,16 @@ public class DailyAlertReceiver extends BroadcastReceiver{
         // Sends the notification for every day
         NotificationHelper notificationHelper = new NotificationHelper(context);
         NotificationCompat.Builder nb = notificationHelper.getChannelTwoNotification();
-        notificationHelper.getManager().notify(2, nb.build());
+
+        // Opens the app when notification is clicked
+        Intent notificationIntent = new Intent(context, MainActivity.class);
+        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP| Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
+        Notification notification = nb.build();
+        notification.contentIntent = pendingIntent;
+        notification.flags |= Notification.FLAG_AUTO_CANCEL;
+
+        notificationHelper.getManager().notify(2, notification);
 
         // Cancels any hourly notifications that may have rolled over to the next day
         notificationHelper.getManager().cancel(1);

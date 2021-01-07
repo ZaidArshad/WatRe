@@ -18,6 +18,7 @@ public class TimeManager extends AppCompatActivity {
     // ATTRIBUTES //
     private Context context;
     private DataManager dataManager;
+    public boolean newDay = false;
 
 
     // CONSTRUCTOR //
@@ -39,11 +40,12 @@ public class TimeManager extends AppCompatActivity {
     public void nextDay() {
         if (isNextDay()) {
             cancelDailyAlarm();
-            Toast.makeText(context,"new day",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"Good Morning!",Toast.LENGTH_SHORT).show();
             dataManager.saveFirstOpenedTime(System.currentTimeMillis());
             dataManager.saveButtonClicks(1);
             dataManager.savePreviousGlassesConsumed(0);
             startDailyAlarm(dataManager.getNextDayTime());
+            newDay = true;
         }
     }
 

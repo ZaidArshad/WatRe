@@ -75,6 +75,7 @@ public class DrinkButton extends AppCompatActivity {
                     isButtonClickable();
 
                     if (dataManager.getPreviousGlassesConsumed() == 1)
+                        timeManager.cancelDailyAlarm();
                         timeManager.startDailyAlarm(dataManager.getNextDayTime());
 
                 }

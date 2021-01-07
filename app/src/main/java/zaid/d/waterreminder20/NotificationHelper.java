@@ -60,14 +60,16 @@ public class NotificationHelper extends ContextWrapper {
                 .setContentTitle("Drink Water")
                 .setContentText("Drink your hourly glass of water")
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
-                .setSmallIcon(R.drawable.ic_cup);
+                .setSmallIcon(R.drawable.ic_cup)
+                .setOngoing(true);
     }
     public NotificationCompat.Builder getChannelTwoNotification() {
         return new NotificationCompat.Builder(getApplicationContext(), CHANNEL_TWO_ID)
                 .setContentTitle("Good Morning")
                 .setContentText("It's time to start drinking water")
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
-                .setSmallIcon(R.drawable.ic_cup);
+                .setSmallIcon(R.drawable.ic_cup)
+                .setOngoing(true);
     }
 
 }
