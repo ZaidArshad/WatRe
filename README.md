@@ -1,4 +1,4 @@
-# Water-Reminder 
+# WatRe (Water Reminder)
 Project by Zaid Arshad. Developed from June to August 2020 
 
 ## Description
