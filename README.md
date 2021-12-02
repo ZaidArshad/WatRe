@@ -7,6 +7,9 @@ WatRe is an Android application coded in Java that makes use of notifications to
 ## About
 I made this application for myself as I did poorly staying hydrated. The objective of this application is to remind myself to drink water periodically throughout the day with daily and hourly notifications.
 
+## APK
+The APK for this app can be found under the <a href="https://github.com/ZaidArshad/WatRe/releases/tag/v1.0.0">releases</a> tab on this repository.
+
 ## Daily Reminder
 The user will be greeted every morning with a reminder to start drinking water. This notification cannot be closed unless the user opens the app. While this may be an aggressive approach, it will prevent them from being lazy and guilt them into drinking more water.
 <div align="center">
