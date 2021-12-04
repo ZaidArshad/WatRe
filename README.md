@@ -4,8 +4,8 @@ Project by Zaid Arshad. Developed from June to August 2020
 ## Description
 WatRe is an Android application coded in Java that makes use of notifications to remind the user to drink water.
 
-## About
-I made this application for myself as I did poorly staying hydrated. The objective of this application is to remind myself to drink water periodically throughout the day with daily and hourly notifications.
+## Experience
+This was the first major Android project I worked on. I made this application for myself as I did poorly staying hydrated. The objective of this application is to remind myself to drink water periodically throughout the day with daily and hourly notifications.
 
 ## APK
 The APK for this app can be found under the <a href="https://github.com/ZaidArshad/WatRe/releases/tag/v1.0.0">releases</a> tab on this repository.
