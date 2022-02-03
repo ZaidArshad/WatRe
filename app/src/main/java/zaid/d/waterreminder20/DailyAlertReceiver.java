@@ -7,9 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
+
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
@@ -44,6 +42,7 @@ public class DailyAlertReceiver extends BroadcastReceiver{
         TimeManager timeManager = new TimeManager(context);
         timeManager.cancelHourlyAlarm();
 
+        WebReciever.setReminding(context, true);
 
         Intent i = new Intent();
         i.setClassName("zaid.d.waterreminder20", "zaid.d.waterreminder20.MainActivity");

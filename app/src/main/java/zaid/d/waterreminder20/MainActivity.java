@@ -6,13 +6,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.text.SimpleDateFormat;
-
 import java.util.Locale;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private static long firstTimeOpened;
     private static long nextDayTime;
     private static long nextDrinkTime;
-
      */
 
 
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private DataManager dataManager = new DataManager(this);
 
     public DrinkButton drinkButton;
-
+    
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     // When app is opened
@@ -63,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
         TextView debug = findViewById(R.id.test);
         debug.setText("");
 
+        Button button = findViewById(R.id.apiCallBtn);
+        button.setOnClickListener((v)-> WebReciever.setReminding(this, true));
+
         /* DEBUG
         TextView debug = findViewById(R.id.test);
         String glassesConsumed = "Glasses Consumed: " + previousGlassesConsumed + "\n";
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         String debugString = glassesConsumed + buttonClicksLeft + firstTime + nextDay + nextTime;
         debug.setText(debugString);
          */
+
     }
 
 

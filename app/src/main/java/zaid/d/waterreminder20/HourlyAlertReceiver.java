@@ -5,11 +5,6 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.widget.Button;
-import android.widget.WrapperListAdapter;
-
-import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 public class HourlyAlertReceiver extends BroadcastReceiver  {
@@ -27,10 +22,11 @@ public class HourlyAlertReceiver extends BroadcastReceiver  {
         notification.contentIntent = pendingIntent;
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
 
+        WebReciever.setReminding(context, true);
+
         notificationHelper.getManager().notify(1, notification);
         DataManager dataManager = new DataManager(context);
         dataManager.saveButtonClicks(dataManager.getButtonClicks()+1);
-
 
     }
 }

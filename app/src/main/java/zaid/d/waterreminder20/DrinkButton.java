@@ -47,6 +47,7 @@ public class DrinkButton extends AppCompatActivity {
             public void onClick(View view) {
                 // If the button can be clicked
                 if (isButtonClickable()) {
+                    WebReciever.setReminding(context, false);
 
                     // Increases the amount of glasses the user has drank
                     dataManager.savePreviousGlassesConsumed(dataManager.getPreviousGlassesConsumed()+1);

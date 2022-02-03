@@ -9,6 +9,16 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/apiCallBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call api"
+        app:layout_constraintBottom_toTopOf="@+id/nextDrinkText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="@android:style/Widget.ProgressBar.Horizontal"
