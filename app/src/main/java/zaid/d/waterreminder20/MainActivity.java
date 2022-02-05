@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm:ss a", Locale.CANADA);
 
     // Times used for testing the app is a short amount of time
-    //final static public int MILLIS_PER_HOUR = 3000; // 3 seconds
-    //final static public int MILLIS_PER_HOUR_AND_HALF = 5000; // 5 seconds
+    //final static public int MILLIS_PER_HOUR = 10000; // 10 seconds
+    //final static public int MILLIS_PER_HOUR_AND_HALF = 5000; // 15000 seconds
 
     private static int previousGlassesConsumed;
 
