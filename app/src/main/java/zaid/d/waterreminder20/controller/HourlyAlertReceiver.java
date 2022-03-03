@@ -1,4 +1,4 @@
-package zaid.d.waterreminder20;
+package zaid.d.waterreminder20.controller;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -6,6 +6,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import androidx.core.app.NotificationCompat;
+
+import zaid.d.waterreminder20.view.MainActivity;
+import zaid.d.waterreminder20.model.DataManager;
 
 public class HourlyAlertReceiver extends BroadcastReceiver  {
     @Override

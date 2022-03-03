@@ -1,4 +1,4 @@
-package zaid.d.waterreminder20;
+package zaid.d.waterreminder20.controller;
 
 import android.annotation.TargetApi;
 import android.app.Notification;
@@ -10,6 +10,8 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+
+import zaid.d.waterreminder20.R;
 
 public class NotificationHelper extends ContextWrapper {
 

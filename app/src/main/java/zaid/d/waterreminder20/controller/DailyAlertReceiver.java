@@ -1,4 +1,4 @@
-package zaid.d.waterreminder20;
+package zaid.d.waterreminder20.controller;
 
 
 import android.app.Notification;
@@ -11,6 +11,10 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
+
+import zaid.d.waterreminder20.model.DataManager;
+import zaid.d.waterreminder20.view.MainActivity;
+import zaid.d.waterreminder20.model.TimeManager;
 
 public class DailyAlertReceiver extends BroadcastReceiver{
 
@@ -45,7 +49,7 @@ public class DailyAlertReceiver extends BroadcastReceiver{
         WebReciever.setReminding(context, true);
 
         Intent i = new Intent();
-        i.setClassName("zaid.d.waterreminder20", "zaid.d.waterreminder20.MainActivity");
+        i.setClassName("zaid.d.waterreminder20", "zaid.d.waterreminder20.view.MainActivity");
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
     }

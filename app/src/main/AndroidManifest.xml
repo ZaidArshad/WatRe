@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:label="@string/app_name"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
@@ -22,8 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".HourlyAlertReceiver"/>
-        <receiver android:name=".DailyAlertReceiver"/>
+        <receiver android:name=".controller.HourlyAlertReceiver"/>
+        <receiver android:name=".controller.DailyAlertReceiver"/>
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_list"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <ProgressBar
         android:id="@+id/progressBar"

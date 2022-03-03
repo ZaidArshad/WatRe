@@ -1,20 +1,17 @@
-package zaid.d.waterreminder20;
+package zaid.d.waterreminder20.model;
 
-import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.os.Build;
-import android.text.method.BaseKeyListener;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
+
+import zaid.d.waterreminder20.view.MainActivity;
+import zaid.d.waterreminder20.controller.WebReciever;
+import zaid.d.waterreminder20.view.Background;
 
 public class DrinkButton extends AppCompatActivity {
 
@@ -28,7 +25,7 @@ public class DrinkButton extends AppCompatActivity {
 
 
     // CONSTRUCTOR //
-    DrinkButton(Context c, Button layoutButton, TextView glassesT, TextView nextDrinkT, Background bg) {
+    public DrinkButton(Context c, Button layoutButton, TextView glassesT, TextView nextDrinkT, Background bg) {
         context = c; // Context of the main activity
         dataManager = new DataManager(c); // Gives the class access to app's shared preferences
         button = layoutButton; // Get access to the button from the layout

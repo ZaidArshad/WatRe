@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_list"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <Button
         android:id="@+id/apiCallBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="Call api"
         app:layout_constraintBottom_toTopOf="@+id/nextDrinkText"
         app:layout_constraintEnd_toEndOf="parent"

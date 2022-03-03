@@ -1,4 +1,4 @@
-package zaid.d.waterreminder20;
+package zaid.d.waterreminder20.view;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,12 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+import zaid.d.waterreminder20.R;
+import zaid.d.waterreminder20.controller.WebReciever;
+import zaid.d.waterreminder20.model.DataManager;
+import zaid.d.waterreminder20.model.DrinkButton;
+import zaid.d.waterreminder20.model.TimeManager;
+import zaid.d.waterreminder20.view.Background;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm:ss a", Locale.CANADA);
 
     // Times used for testing the app is a short amount of time
-    //final static public int MILLIS_PER_HOUR = 10000; // 10 seconds
-    //final static public int MILLIS_PER_HOUR_AND_HALF = 5000; // 15000 seconds
+    //final static public int MILLIS_PER_HOUR = 20000; // 20 seconds
+    //final static public int MILLIS_PER_HOUR_AND_HALF = 30000; // 30 seconds
 
     private static int previousGlassesConsumed;
 
@@ -33,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     private static long nextDayTime;
     private static long nextDrinkTime;
      */
-
 
     private TimeManager timeManager = new TimeManager(this);
     private DataManager dataManager = new DataManager(this);

@@ -1,4 +1,4 @@
-package zaid.d.waterreminder20;
+package zaid.d.waterreminder20.view;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import zaid.d.waterreminder20.model.DataManager;
 
 public class Background extends Application {
 

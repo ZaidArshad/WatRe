@@ -1,20 +1,13 @@
-package zaid.d.waterreminder20;
+package zaid.d.waterreminder20.model;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.provider.ContactsContract;
-import android.widget.Toast;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static android.widget.Toast.LENGTH_SHORT;
+import zaid.d.waterreminder20.view.MainActivity;
 
 public class DataManager extends AppCompatActivity {
 
